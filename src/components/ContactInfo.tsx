@@ -14,27 +14,48 @@ function ContactInfo() {
       </div>
       <div className="flex flex-row items-center gap-4 md:text-xl md:font-medium">
         <i className="fa-solid fa-envelope"></i>
-        <p className="text-sm font-medium text-left">{email}</p>
+        <a
+          href={`mailto:${email}`}
+          target="_blank"
+          className="text-sm font-medium text-left"
+        >
+          {email}
+        </a>
       </div>
       <div className="flex flex-row items-center gap-4 md:text-xl md:font-medium">
         <i className="fa-brands fa-whatsapp"></i>
-        <p className="text-sm font-medium text-left">{whatsappNumber}</p>
+        <a
+          href={`https://wa.me/${whatsappNumber}`}
+          target="_blank"
+          className="text-sm font-medium text-left"
+        >
+          {whatsappNumber}
+        </a>
       </div>
       <div className="flex flex-row items-center gap-4 md:text-xl md:font-medium">
         <i className="fa-solid fa-phone"></i>
-        <p className="text-sm font-medium text-left">{phoneNumber}</p>
+        <a
+          href={`tel:${phoneNumber}`}
+          target="_blank"
+          className="text-sm font-medium text-left"
+        >
+          {phoneNumber}
+        </a>
       </div>
       <div className="flex flex-col items-start gap-4 pt-5">
         <h1 className="text-lg font-medium text-left">Let us connect</h1>
         <div className="flex flex-row items-center gap-10">
-          <a href="http://" target="_blank">
+          <a href="http://github.com/king-aggor" target="_blank">
             <i className="fa-brands fa-github text-xl"></i>
           </a>
-          <a href="http://" target="_blank">
+          <a
+            href="http://linkedin.com/in/emmanuel-aggor-a4637a232/"
+            target="_blank"
+          >
             <i className="fa-brands fa-linkedin text-xl"></i>
           </a>
-          <a href="http://" target="_blank">
-            <i className="fa-brands fa-twitter text-xl"></i>
+          <a href="http://twitter.com/king_aggor" target="_blank">
+            <i className="fa-brands fa-square-x-twitter text-xl"></i>
           </a>
         </div>
       </div>
