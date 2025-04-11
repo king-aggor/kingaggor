@@ -2,6 +2,7 @@ import Welcome from "./Welcome";
 import Section from "./Section";
 import ServicesSection from "./ServicesSection";
 import ProjectSection from "./ProjectSection";
+import GetInTouch from "./GetInTouch";
 
 function Home() {
   return (
@@ -10,7 +11,7 @@ function Home() {
       <Section title="Technical Expertise" />
       <ServicesSection title="Services" />
       <ProjectSection />
-      {/* <Section title="Contact" /> */}
+      <GetInTouch />
     </div>
   );
 }
