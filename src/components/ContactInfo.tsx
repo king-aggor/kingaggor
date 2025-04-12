@@ -25,7 +25,10 @@ function ContactInfo() {
       <div className="flex flex-row items-center gap-4 md:text-xl md:font-medium">
         <i className="fa-brands fa-whatsapp"></i>
         <a
-          href={`https://wa.me/${whatsappNumber}`}
+          href={`https://wa.me/${whatsappNumber.replace(
+            /\s/g,
+            ""
+          )}/?text=Hello, from your portfolio website. I'm interested in your services.`}
           target="_blank"
           className="text-sm font-medium text-left"
         >
