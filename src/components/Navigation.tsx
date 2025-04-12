@@ -12,7 +12,7 @@ function Navigation() {
     <div className="flex justify-between items-center h-25 bg-white text-gray-700 relative shadow-sm w-full px-5 md:px-35">
       <div>
         <h1 className="text-3xl font-bold">
-          <Link to="/">KA</Link>
+          <Link to="/">{`{KA}`}</Link>
         </h1>
       </div>
 
@@ -78,7 +78,7 @@ function Navigation() {
               onClick={toggleMenu}
               className="hover:text-gray-500 transition-colors duration-300"
             >
-              KA
+              {`{KA}`}
             </Link>
           </h1>
           <button
