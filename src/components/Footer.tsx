@@ -7,9 +7,18 @@ function Footer() {
       </div>
       <div className="flex flex-col gap-3 items-center">
         <div className="flex flex-row gap-5 text-xl">
-          <i className="fa-brands fa-github "></i>
-          <i className="fa-brands fa-linkedin "></i>
-          <i className="fa-brands fa-twitter "></i>
+          <a href="https://github.com/king-aggor" target="_blank">
+            <i className="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/emmanuel-aggor-a4637a232/"
+            target="_blank"
+          >
+            <i className="fa-brands fa-linkedin "></i>
+          </a>
+          <a href="https://x.com/king_aggor" target="_blank">
+            <i className="fa-brands fa-twitter "></i>
+          </a>
         </div>
         <p className="text-sm">&copy; 2025 King Aggor. All rights reserved.</p>
       </div>

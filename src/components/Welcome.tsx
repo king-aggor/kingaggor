@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Welcome() {
   return (
-    <div className="min-h-[45vh] bg-gray-100 bg-[radial-gradient(#e5e7eb_2px,transparent_2px)] [background-size:25px_25px] flex flex-col justify-center items-start gap-1 pt-10 text-gray-700 px-5 md:items-center md:px-35 md:gap-3 md:min-h-[85vh]">
+    <div className="min-h-[45vh] bg-gray-100 bg-[radial-gradient(#e5e7eb_2px,transparent_2px)] [background-size:25px_25px] flex flex-col justify-center items-start gap-1 pt-10 text-gray-700 px-5 md:items-center md:px-35 md:gap-3 md:min-h-[90vh]">
       <h1 className="text-4xl font-bold md:font-extrabold md:text-5xl">
         King Aggor
       </h1>

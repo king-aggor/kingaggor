@@ -37,7 +37,10 @@ function Navigation() {
             </a>
           </li>
           <li className="cursor-pointer">
-            <a href="https://www.linkedin.com/in/king-aggor/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/emmanuel-aggor-a4637a232/"
+              target="_blank"
+            >
               <i className="fa-brands fa-linkedin text-2xl"></i>
             </a>
           </li>
@@ -126,14 +129,14 @@ function Navigation() {
               <i className="fa-brands fa-github text-2xl"></i>
             </a>
             <a
-              href="https://www.linkedin.com/in/king-aggor/"
+              href="https://www.linkedin.com/in/emmanuel-aggor-a4637a232/"
               target="_blank"
               className="hover:text-gray-500 transition-colors duration-300 transform hover:scale-110"
             >
               <i className="fa-brands fa-linkedin text-2xl"></i>
             </a>
             <a
-              href="https://www.linkedin.com/in/king-aggor/"
+              href="https://x.com/king_aggor"
               target="_blank"
               className="hover:text-gray-500 transition-colors duration-300 transform hover:scale-110"
             >
