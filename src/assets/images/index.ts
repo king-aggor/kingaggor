@@ -14,6 +14,12 @@ import typescript from "./typescript.png";
 import react from "./react.png";
 import tailwind from "./tailwind.png";
 import dipperlab from "./dipperlab.png";
+import bash from "./bash.png";
+import linux from "./linux.png";
+import promethus from "./promethus.png";
+import nginx from "./nginx.png";
+import apache from "./apache.png";
+import chofibox from "./chofibox.png";
 export default {
   bg,
   node,
@@ -31,4 +37,10 @@ export default {
   react,
   tailwind,
   dipperlab,
+  bash,
+  linux,
+  promethus,
+  nginx,
+  apache,
+  chofibox,
 };
