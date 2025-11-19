@@ -1,4 +1,5 @@
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <div className="flex items-center px-5 flex-col py-20 text-gray-500 gap-10 md:flex-row md:justify-between md:px-35">
       <div className="flex flex-col">
@@ -20,7 +21,9 @@ function Footer() {
             <i className="fa-brands fa-twitter "></i>
           </a>
         </div>
-        <p className="text-sm">&copy; 2025 King Aggor. All rights reserved.</p>
+        <p className="text-sm">
+          &copy; {currentYear} King Aggor. All rights reserved.
+        </p>
       </div>
     </div>
   );
