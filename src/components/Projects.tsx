@@ -1,4 +1,5 @@
-import project1 from "../assets/images/dipperlab.png";
+import dipperLab from "../assets/images/dipperlab.png";
+import chofiBox from "../assets/images/chofibox.png";
 import ProjectCard from "./ProjectCard";
 
 function Projects() {
@@ -32,7 +33,7 @@ function Projects() {
         </div>
         <div className="flex flex-col bg-white shadow-md md:items-center md:flex-row gap-4 rounded-md">
           <div className="flex flex-col md:w-1/2 md:h-full">
-            <img className="w-full h-full" src={project1} alt="Project 1" />
+            <img className="w-full h-full" src={dipperLab} alt="Project 1" />
           </div>
           <div className="flex flex-col gap-3 px-5 text-left">
             <h1 className="text-2xl md:text-3xl font-bold">Project 1</h1>
@@ -80,10 +81,10 @@ function Projects() {
         </h2>
         <div className="flex flex-col gap-10 md:gap-10 md:flex-row md:flex-wrap justify-center items-center">
           <ProjectCard
-            image={project1}
+            image={dipperLab}
             title="Project 1"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-            link="http://"
+            link="http://dipperlab.knust.edu.gh"
             technologies={[
               "Next.js",
               "Node.js",
@@ -94,45 +95,17 @@ function Projects() {
             ]}
           />
           <ProjectCard
-            image={project1}
+            image={chofiBox}
             title="Project 1"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-            link="http://"
+            link="http://thechofibox.com"
             technologies={[
-              "Next.js",
-              "Node.js",
-              "Express.js",
-              "Docker",
-              "MySQL",
-              "Git Actions",
-            ]}
-          />
-          <ProjectCard
-            image={project1}
-            title="Project 1"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-            link="http://"
-            technologies={[
-              "Next.js",
-              "Node.js",
-              "Express.js",
-              "Docker",
-              "MySQL",
-              "Git Actions",
-            ]}
-          />
-          <ProjectCard
-            image={project1}
-            title="Project 1"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-            link="http://"
-            technologies={[
-              "Next.js",
-              "Node.js",
-              "Express.js",
-              "Docker",
-              "MySQL",
-              "Git Actions",
+              "React",
+              "ExpressJS",
+              "PostgreSQL",
+              "NodeMailer",
+              "Stripe",
+              "Royal Mail",
             ]}
           />
         </div>

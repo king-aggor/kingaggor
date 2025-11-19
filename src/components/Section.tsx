@@ -42,13 +42,17 @@ function Section(props: SectionProps) {
         ]}
       />
       <ExpertiseContent
-        title="Tools & Technologies"
+        title="DevOps"
+        // titleIcon={`<i class="fa-solid fa-gear"></i>`}
         titleIcon={`<i class="fa-solid fa-screwdriver-wrench"></i>`}
         content={[
           { name: "Git", icon: images.git },
           { name: "Docker", icon: images.docker },
-          { name: "Visual Studio Code", icon: images.vscode },
-          { name: "Postman", icon: images.postman },
+          { name: "Bash", icon: images.bash },
+          { name: "Linux", icon: images.linux },
+          { name: "Nginx", icon: images.nginx },
+          { name: "Apache", icon: images.apache },
+          { name: "Promethus", icon: images.promethus },
         ]}
       />
     </div>

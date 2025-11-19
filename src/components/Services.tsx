@@ -48,6 +48,16 @@ function Services() {
           description="Design, implement, optimize and manage databases to store and retrieve data efficiently and securely."
         />
         <ServiceCard
+          title="Server Management"
+          icon="fa-solid fa-server"
+          description="Manage and optimize your servers with best-practice configurations to ensure your systems are secure, stable, and high-performing."
+        />
+        <ServiceCard
+          title="Application Deployment"
+          icon="fa-solid fa-rocket"
+          description="Deploy your applications using reliable, industry-standard workflows to ensure smooth, secure, scalable and high availability releases."
+        />
+        <ServiceCard
           title="Product Requirement Documentation"
           icon="fa-solid fa-file-alt"
           description="Document the requirements of the product to ensure that the development process is efficient and effective."
