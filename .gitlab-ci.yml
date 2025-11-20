@@ -27,6 +27,6 @@ push_to_dockerhub_job:
     - echo "Pushing docker image to Docker Hub..."
     - docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASSWORD"
     - docker tag potfolio-website:dev "$DOCKERHUB_USERNAME/potfolio-website:dev"
-    - docker push "$DOCKERHUB_USERNAME/potfolio-website:latest"
+    - docker push "$DOCKERHUB_USERNAME/potfolio-website:dev"
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
