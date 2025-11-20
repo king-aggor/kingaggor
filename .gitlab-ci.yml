@@ -27,66 +27,24 @@ deploy_job:
   stage: deploy
   tags:
     - deploy
-  image: appleboy/drone-ssh
+  image: alpine:latest
+  before_script:
+    - apk add --no-cache openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
   script:
-    - echo "Deploying to server..."
+    - |
+      ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << EOF
+        set -e
+        docker pull $DOCKERHUB_USERNAME/potfolio-website:dev
+        docker rm -f potfolio-website || true
+        docker run -d --name potfolio-website -p 80:80 $DOCKERHUB_USERNAME/potfolio-website:dev
+      EOF
   only:
     - master
   variables:
     SSH_HOST: "100.73.28.58"
-    SSH_PORT: "22"
     SSH_USER: "manager1"
-    SSH_KEY: "-----BEGIN OPENSSH PRIVATE KEY-----
-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
------END OPENSSH PRIVATE KEY-----"
-    SCRIPT: |
-      set -e
-      docker pull $DOCKERHUB_USERNAME/potfolio-website:dev
-      docker rm -f potfolio-website || true
-      docker run -d --name potfolio-website -p 80:80 $DOCKERHUB_USERNAME/potfolio-website:dev
