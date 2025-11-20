@@ -17,6 +17,7 @@ build_and_push_job:
     - echo "Docker image built successfully."
     - echo "logining to docker hub..."
     - docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASSWORD"
+    - docker tag potfolio-website:dev "$DOCKERHUB_USERNAME/potfolio-website:dev"
     - docker push "$DOCKERHUB_USERNAME/potfolio-website:dev"
     - echo "pushed to docker hub successfully."
   rules:
