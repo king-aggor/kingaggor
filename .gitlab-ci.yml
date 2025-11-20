@@ -1,32 +1,23 @@
 stages:
-  - build
-  - push_to_dockerhub
+  - build_and_push_to_dockerhub
   - deploy
 
 variables:
   DOCKER_HOST: tcp://docker:2375/
   DOCKER_TLS_CERTDIR: ""
 
-build_job:
-  stage: build
+build_and_push_job:
+  stage: build_and_push_to_dockerhub
   image: docker:latest
   services:
     - docker:dind
   script:
     - echo "Building docker image..."
     - docker build -t potfolio-website:dev .
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
-
-push_to_dockerhub_job:
-  stage: push_to_dockerhub
-  image: docker:latest
-  services:
-    - docker:dind
-  script:
-    - echo "Pushing docker image to Docker Hub..."
+    - echo "Docker image built successfully."
+    - echo "logining to docker hub..."
     - docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASSWORD"
-    - docker tag potfolio-website:dev "$DOCKERHUB_USERNAME/potfolio-website:dev"
     - docker push "$DOCKERHUB_USERNAME/potfolio-website:dev"
+    - echo "pushed to docker hub successfully."
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
