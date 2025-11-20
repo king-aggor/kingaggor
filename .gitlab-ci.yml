@@ -25,6 +25,7 @@ build_and_push_job:
 
 deploy_job:
   stage: deploy
+  tags: deploy
   image: appleboy/drone-ssh
   script:
     - echo "Deploying to server..."
