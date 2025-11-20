@@ -33,21 +33,12 @@ deploy_job:
   only:
     - master
   variables:
-    SSH_HOST: 100.73.28.58
-    SSH_PORT: 22
-    SSH_USER: manager1
-    # SSH_KEY: $SSH_KEY
+    SSH_HOST: "100.73.28.58"
+    SSH_PORT: "22"
+    SSH_USER: "manager1"
+    SSH_KEY: "$SSH_KEY"
     SCRIPT: |
       set -e
-      echo "Deploying to server..."
-      # Decode the key and save temporarily
-      echo "$SSH_KEY_B64" | base64 -d > /tmp/deploy_key
-      chmod 600 /tmp/deploy_key
-
-      # Run commands on remote server using the temporary key
-      ssh -i /tmp/deploy_key -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "
-        docker pull $DOCKERHUB_USERNAME/potfolio-website:dev
-        docker rm -f potfolio-website || true
-        docker run -d --name potfolio-website -p 80:80 $DOCKERHUB_USERNAME/potfolio-website:dev
-      "
-      echo "Deployment completed successfully."
+      docker pull $DOCKERHUB_USERNAME/potfolio-website:dev
+      docker rm -f potfolio-website || true
+      docker run -d --name potfolio-website -p 80:80 $DOCKERHUB_USERNAME/potfolio-website:dev
