@@ -22,3 +22,26 @@ build_and_push_job:
     - echo "pushed to docker hub successfully."
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
+
+deploy_job:
+  stage: deploy
+  image: appleboy/drone-ssh
+  script:
+    - echo "Deploying to server..."
+  # environment:
+  #   name: production
+  #   url: http://100.122.73.10
+  only:
+    - master
+  variables:
+    SSH_HOST: $SSH_HOST
+    SSH_PORT: $SSH_PORT
+    SSH_USER: $SSH_USER
+    SSH_PASSWORD: $SSH_PASSWORD
+    # SSH_KEY: $SSH_KEY
+    # SSH_KEY_PASSPHRASE: $SSH_KEY_PASSPHRASE
+    SCRIPT: |
+      docker pull $DOCKERHUB_USERNAME/potfolio-website:dev
+      docker stop potfolio-website || true
+      docker rm potfolio-website || true
+      docker run -d --name potfolio-website -p 80:80 $DOCKERHUB_USERNAME/potfolio-website:dev
