@@ -40,7 +40,14 @@ deploy_job:
     SCRIPT: |
       set -e
       echo "Deploying to server..."
-      docker pull $DOCKERHUB_USERNAME/potfolio-website:dev
-      docker rm -f potfolio-website || true
-      docker run -d --name potfolio-website -p 80:80 $DOCKERHUB_USERNAME/potfolio-website:dev
+      # Decode the key and save temporarily
+      echo "$SSH_KEY_B64" | base64 -d > /tmp/deploy_key
+      chmod 600 /tmp/deploy_key
+
+      # Run commands on remote server using the temporary key
+      ssh -i /tmp/deploy_key -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "
+        docker pull $DOCKERHUB_USERNAME/potfolio-website:dev
+        docker rm -f potfolio-website || true
+        docker run -d --name potfolio-website -p 80:80 $DOCKERHUB_USERNAME/potfolio-website:dev
+      "
       echo "Deployment completed successfully."
