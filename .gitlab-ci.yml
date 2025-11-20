@@ -3,6 +3,10 @@ stages:
   - push_to_dockerhub
   - deploy
 
+variables:
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_TLS_CERTDIR: ""
+
 build_job:
   stage: build
   image: docker:latest
@@ -11,6 +15,8 @@ build_job:
   script:
     - echo "Building docker image..."
     - docker build -t potfolio-website:dev .
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
 
 push_to_dockerhub_job:
   stage: push_to_dockerhub
@@ -22,6 +28,5 @@ push_to_dockerhub_job:
     - docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASSWORD"
     - docker tag potfolio-website:dev "$DOCKERHUB_USERNAME/potfolio-website:dev"
     - docker push "$DOCKERHUB_USERNAME/potfolio-website:latest"
-
-rules:
-  - if: '$CI_COMMIT_BRANCH == "master"'
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
