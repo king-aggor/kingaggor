@@ -1,0 +1,27 @@
+stages:
+  - build
+  - push_to_dockerhub
+  - deploy
+
+build_job:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "Building docker image..."
+    - docker build -t potfolio-website:dev .
+
+push_to_dockerhub_job:
+  stage: push_to_dockerhub
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - echo "Pushing docker image to Docker Hub..."
+    - docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASSWORD"
+    - docker tag potfolio-website:dev "$DOCKERHUB_USERNAME/potfolio-website:dev"
+    - docker push "$DOCKERHUB_USERNAME/potfolio-website:latest"
+
+rules:
+  - if: '$CI_COMMIT_BRANCH == "master"'
