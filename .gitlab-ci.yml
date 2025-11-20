@@ -32,10 +32,10 @@ deploy_job:
   only:
     - master
   variables:
-    SSH_HOST: $SSH_HOST
+    SSH_HOST: 100.73.28.58
     SSH_PORT: 22
-    SSH_USER: $SSH_USER
-    SSH_PASSWORD: $SSH_PASSWORD
+    SSH_USER: manager1
+    SSH_PASSWORD: manager1
     SCRIPT: |
       set -e
       echo "Pulling latest Docker image..."
