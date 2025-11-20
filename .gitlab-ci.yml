@@ -39,10 +39,8 @@ deploy_job:
     SSH_KEY: $SSH_KEY
     SCRIPT: |
       set -e
-      echo "Pulling latest Docker image..."
-      docker pull $DOCKERHUB_USERNAME/potfolio-website:dev
-      echo "Stopping existing container if any..."
-      docker rm -f potfolio-website || true
-      echo "Starting container..."
-      docker run -d --name potfolio-website -p 80:80 $DOCKERHUB_USERNAME/portfolio-website:dev
+      echo "Deploying to server..."
+      docker pull $DOCKERHUB_USERNAME/portfolio-website:dev
+      docker rm -f portfolio-website || true
+      docker run -d --name portfolio-website -p 80:80 $DOCKERHUB_USERNAME/portfolio-website:dev
       echo "Deployment completed successfully."
