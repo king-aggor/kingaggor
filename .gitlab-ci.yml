@@ -36,11 +36,11 @@ deploy_job:
     SSH_HOST: 100.73.28.58
     SSH_PORT: 22
     SSH_USER: manager1
-    SSH_KEY: $SSH_KEY
+    # SSH_KEY: $SSH_KEY
     SCRIPT: |
       set -e
       echo "Deploying to server..."
-      docker pull $DOCKERHUB_USERNAME/portfolio-website:dev
-      docker rm -f portfolio-website || true
-      docker run -d --name portfolio-website -p 80:80 $DOCKERHUB_USERNAME/portfolio-website:dev
+      docker pull $DOCKERHUB_USERNAME/potfolio-website:dev
+      docker rm -f potfolio-website || true
+      docker run -d --name potfolio-website -p 80:80 $DOCKERHUB_USERNAME/potfolio-website:dev
       echo "Deployment completed successfully."
