@@ -4,15 +4,18 @@ import ServiceCard from "./ServiceCard";
 function Services() {
   useEffect(() => {
     document.title = "Services - King Aggor | Software Development Services";
-    
+
     // Update meta description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'High quality software development services including custom web applications, e-commerce solutions, API development, and more. Professional and reliable development services.');
+    metaDescription.setAttribute(
+      "content",
+      "High quality software development services including custom web applications, e-commerce solutions, API development, and more. Professional and reliable development services."
+    );
 
     const hash = window.location.hash;
     if (hash) {
