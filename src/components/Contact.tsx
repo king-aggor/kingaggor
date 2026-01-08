@@ -1,8 +1,26 @@
+import { useEffect } from "react";
 import ContactInfo from "./ContactInfo";
 import MessageMe from "./MessageMe";
 
 function Contact() {
   const whatsappNumber = import.meta.env.VITE_WhatsappNumber;
+
+  useEffect(() => {
+    document.title = "Contact - King Aggor | Get In Touch";
+
+    // Update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute(
+      "content",
+      "Have a project in mind or want to discuss a potential collaboration? Contact King Aggor, Software Engineer. Let's build something amazing together."
+    );
+  }, []);
+
   return (
     <div className="flex flex-col gap-20 md:gap-30 px-5 md:px-35 pt-10 text-gray-700">
       <div className="flex flex-col md:items-center">

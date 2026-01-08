@@ -3,6 +3,17 @@ import ServiceCard from "./ServiceCard";
 
 function Services() {
   useEffect(() => {
+    document.title = "Services - King Aggor | Software Development Services";
+    
+    // Update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'High quality software development services including custom web applications, e-commerce solutions, API development, and more. Professional and reliable development services.');
+
     const hash = window.location.hash;
     if (hash) {
       const element = document.querySelector(hash);
@@ -18,8 +29,9 @@ function Services() {
         Services
       </h1>
       <p className="text-1xl font-light text-left w-full md:text-center md:text-[1.2rem] md:w-[70%]">
-        I provide high quality web development services that empower businesses
-        to build a strong online presence and reach their digital goals.
+        I provide high quality software development services that integrates
+        business logic to empower businesses and organizations to build a strong
+        online presence and reach their digital goals.
       </p>
       <div className="flex flex-col pt-20 md:flex-row md:flex-wrap justify-center gap-10">
         <ServiceCard
@@ -75,9 +87,9 @@ function Services() {
             <i className="fa-solid fa-wrench"></i> Technical Expertise
           </h2>
           <p>
-            With strong skills in both frontend and backend development, I build
-            fast, responsive, and scalable websites tailored to your business
-            needs.
+            With strong skills and years of experience in both frontend and
+            backend development and also devops, I build and deploy fast,
+            responsive, and scalable websites tailored to your business needs.
           </p>
         </div>
         <div className="flex flex-col gap-3 items-start">

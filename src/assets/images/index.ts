@@ -20,6 +20,7 @@ import promethus from "./promethus.png";
 import nginx from "./nginx.png";
 import apache from "./apache.png";
 import chofibox from "./chofibox.png";
+import keylot from "./keylot.png";
 export default {
   bg,
   node,
@@ -43,4 +44,5 @@ export default {
   nginx,
   apache,
   chofibox,
+  keylot,
 };

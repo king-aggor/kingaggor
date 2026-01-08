@@ -16,31 +16,30 @@ function ProjectSection() {
           description="A custom website showsacasing DipperLab's research pulications, members, events, projects, news and activities of the lab."
           link="https://dipperlab.knust.edu.gh/"
           technologies={[
-            "React",
-            "Node.js",
             "ExpressJS",
-            "JWT",
+            "Node.js",
+            "Cloudinary",
             "Typescript",
             "PostgreSQL",
-            "Cloudinary",
-            "NodeMailer",
+            "React",
             "Docker",
-            "Git",
+            "JWT",
+            "Nginx",
           ]}
         />
         <ProjectCard
           image={images.chofibox}
           title="Chofi Box"
           description="An online platform that allows customers to order and pay for meat products online and have them delivered to their doorstep. Also let's administrators manage inventory and orders."
-          link="https://thechofibox.com/"
+          link="/#"
           technologies={[
-            "React",
             "ExpressJS",
-            "JWT",
             "PostgreSQL",
-            "NodeMailer",
-            "Stripe",
             "Royal Mail",
+            "NodeMailer",
+            "React",
+            "Stripe",
+            "JWT",
           ]}
         />
       </div>

@@ -4,7 +4,7 @@ function Footer() {
     <div className="flex items-center px-5 flex-col py-20 text-gray-500 gap-10 md:flex-row md:justify-between md:px-35">
       <div className="flex flex-col">
         <h1 className="text-md font-bold">King Aggor</h1>
-        <p className="text-sm">Web Developer</p>
+        <p className="text-sm">Software Engineer</p>
       </div>
       <div className="flex flex-col gap-3 items-center">
         <div className="flex flex-row gap-5 text-xl">

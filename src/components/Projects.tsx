@@ -1,8 +1,26 @@
+import { useEffect } from "react";
 import dipperLab from "../assets/images/dipperlab.png";
+import keylot from "../assets/images/keylot.png";
 import chofiBox from "../assets/images/chofibox.png";
 import ProjectCard from "./ProjectCard";
 
 function Projects() {
+  useEffect(() => {
+    document.title = "Projects - King Aggor | Portfolio & Recent Work";
+
+    // Update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute(
+      "content",
+      "Explore my portfolio of recent projects including web applications, e-commerce platforms, and custom software solutions. See my work and technical expertise."
+    );
+  }, []);
+
   return (
     <div className="flex flex-col px-5 md:px-35 pt-10 text-gray-700">
       <div className="flex flex-col items-center justify-between">
@@ -32,18 +50,19 @@ function Projects() {
           </div>
         </div>
         <div className="flex flex-col bg-white shadow-md md:items-center md:flex-row gap-4 rounded-md">
-          <div className="flex flex-col md:w-1/2 md:h-full">
-            <img className="w-full h-full" src={dipperLab} alt="Project 1" />
+          <div className="flex flex-col md:w-1/2 md:h-full px-2">
+            <img className="w-full h-full" src={keylot} alt="Project 1" />
           </div>
           <div className="flex flex-col gap-3 px-5 text-left">
-            <h1 className="text-2xl md:text-3xl font-bold">Project 1</h1>
+            <h1 className="text-2xl md:text-3xl font-bold">Key Lot</h1>
             <p className="text-sm md:text-base font-medium text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quos.
+              A comprehensive real estate management platform where
+              adminstrators list and mange properties, and users can browse,
+              book, and review rentals with ease.
             </p>
             <div className="flex flex-row flex-wrap gap-2">
               <p className="text-sm text-gray-500 bg-gray-200 rounded-md px-2 py-1">
-                Next.js
+                React
               </p>
               <p className="text-sm text-gray-500 bg-gray-200 rounded-md px-2 py-1">
                 Node.js
@@ -52,25 +71,25 @@ function Projects() {
                 Express.js
               </p>
               <p className="text-sm text-gray-500 bg-gray-200 rounded-md px-2 py-1">
-                Docker
+                AWS
               </p>
               <p className="text-sm text-gray-500 bg-gray-200 rounded-md px-2 py-1">
-                MySQL
+                PostgreSQL
               </p>
               <p className="text-sm text-gray-500 bg-gray-200 rounded-md px-2 py-1">
-                Git Actions
+                Github Actions
               </p>
             </div>
             <div className="flex flex-col  gap-2">
               <h1 className="text-[0.8rem] md:text-xl font-medium">
                 <i className="fa-solid fa-clock"></i> Estimated Completion:
-                March, 2025
+                January, 2026
               </h1>
             </div>
             <div className="flex flex-row justify-end">
-              <a href="http://" target="_blank" className="text-blue-500">
+              {/* <a href="http://" target="_blank" className="text-blue-500">
                 <i className="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -82,30 +101,34 @@ function Projects() {
         <div className="flex flex-col gap-10 md:gap-10 md:flex-row md:flex-wrap justify-center items-center">
           <ProjectCard
             image={dipperLab}
-            title="Project 1"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+            title="DIPPER Lab. Website"
+            description="A custom website showsacasing DipperLab's research pulications, members, events, projects, news and activities of the lab."
             link="http://dipperlab.knust.edu.gh"
             technologies={[
-              "Next.js",
+              "ExpressJS",
               "Node.js",
-              "Express.js",
+              "Cloudinary",
+              "Typescript",
+              "PostgreSQL",
+              "React",
               "Docker",
-              "MySQL",
-              "Git Actions",
+              "JWT",
+              "Nginx",
             ]}
           />
           <ProjectCard
             image={chofiBox}
-            title="Project 1"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-            link="http://thechofibox.com"
+            title="Chofi Box"
+            description="An online platform that allows customers to order and pay for meat products online and have them delivered to their doorstep. Also let's administrators manage inventory and orders."
+            link="/#"
             technologies={[
-              "React",
               "ExpressJS",
               "PostgreSQL",
-              "NodeMailer",
-              "Stripe",
               "Royal Mail",
+              "NodeMailer",
+              "React",
+              "Stripe",
+              "JWT",
             ]}
           />
         </div>

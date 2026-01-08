@@ -6,10 +6,10 @@ function Welcome() {
       <h1 className="text-4xl font-bold md:font-extrabold md:text-5xl">
         King Aggor
       </h1>
-      <h2 className="text-3xl font-medium md:text-5xl">Web Developer</h2>
+      <h2 className="text-3xl font-medium md:text-5xl">Software Engineer</h2>
       <p className="text-1xl font-light text-left w-full md:text-center md:text-[1.2rem] md:w-[70%]">
-        👋 Hi there! I'm a web developer passionate about building modern,
-        user-friendly websites and applications. I love turning ideas into
+        👋 Hi there! I'm a Software Engineer passionate about building modern,
+        user-friendly web applications and softwares. I love turning ideas into
         clean, functional, and responsive digital experiences.
       </p>
       <Link
